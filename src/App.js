@@ -1,10 +1,15 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-import TemListContainer from "./components/TemListContainer";
+import ItemListContainer from "./components/ItemListContainer";
 
 
 function App() {
-    return(<TemListContainer/>, <NavBar/>) 
+    return(
+        <div>
+            <NavBar/>
+            <ItemListContainer greeting="Bienvenido al Catálogo" name="Dan"/>
+        </div>
+    ) 
 }
 
 
