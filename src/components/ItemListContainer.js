@@ -1,33 +1,35 @@
-import json from "../images/images.json"
+import json from "./productos.json"
 import ItemCount from "./ItemCount/ItemCount.js"
+import Item from "./Item/Item.js"
+import productos from "./productos.json"
 
 const list = []
-for(const key in json){
-    list.push({
-        name: key,
-        id: json[key].id,
-        url: json[key].url
-    })
-}
+// for (const key in json) {
+//   list.push({
+//     id: json[key].id,
+//     title: json[key].title,
+//     price: json[key].price,
+//     url: json[key].url
+//   })
+// }
 
 export default function ItemListContainer(props) {
-    const onAdd = (cantidad) =>{
-        alert(`llevas ${cantidad}`)
-    }
-    return(
-        <div className="vestido1">
-            <h2>VESTIDO DE BAÑO ENTERIZO DISEÑOS Y COLORES SURTIDOS</h2>
-            <p>{props.greeting}</p>
+
+
+  return (
+    <div className="vestido1">
+      <Item items={productos} />
+      {/* <p>{props.greeting}</p>
             <ul>
                 {list.map((item) => (
                     <li key={item.id}>
+                        <p key={item.title}/>
                         <img key={item.id} className="h-80 w-85 m-10" src={item.url}/>
                     </li>
                 ))}
             </ul>
-            <ItemCount initial={1} stock={7} onAdd={onAdd}/>
-            <h2>Code By {props.name}</h2>
-        </div>
-
-    )
+            
+            <h2>Code By {props.name}</h2> */}
+    </div>
+  )
 }

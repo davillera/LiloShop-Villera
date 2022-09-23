@@ -12,7 +12,7 @@ export const ItemCount = ({initial, stock, onAdd}) =>{
     }
     
     return(
-        <div className="counter">
+        <div className="container">
             <button disabled={ count <= 1} onClick={decrementar} className="btn">-</button>
             <span>{count}</span>
             <button disabled={ count >= stock } onClick={incrementar} className="btn">+</button>
@@ -22,7 +22,5 @@ export const ItemCount = ({initial, stock, onAdd}) =>{
         </div>
     )
 }
-    
-
 
 export default ItemCount;
