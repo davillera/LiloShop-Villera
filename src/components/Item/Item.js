@@ -1,13 +1,7 @@
 import { json } from "react-router-dom";
 
-import productos from "../productos.json"
-export default function Item({ items }) {
+export default function Item() {
 
-  let myPromise = new Promise(function (myResolve, myReject) {
-    setTimeout(function () {
-      myResolve(items);
-    }, 2000);
-  });
   const products = [
     {
       "id": 0,
@@ -32,15 +26,10 @@ export default function Item({ items }) {
     }
   ]
 
-  myPromise.then(function (value) {
-    console.log(value);
-  });
-
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900">Nuestros Productos</h2>
-
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
             <div key={product.id} className="group relative">
@@ -63,26 +52,10 @@ export default function Item({ items }) {
                 </div>
                 <p className="text-sm font-medium text-gray-900">{product.price}</p>
               </div>
-              
             </div>
           ))}
         </div>
       </div>
     </div>
-    // <div>
-    //     <h2>Lista de productos</h2>
-    //     <br/>
-    //     <ul>
-    //         {items.map((item) => (
-    //             <li key={item.id}>
-    //                 <img src={item.url} />
-    //                 <h3>{item.title}</h3>
-    //                 <h4>{item.price}</h4>
-    //                 
-    //             </li>
-    //         ))}
-
-    //     </ul>
-    // </div>
   )
 }
